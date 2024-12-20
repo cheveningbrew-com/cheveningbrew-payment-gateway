@@ -1,0 +1,47 @@
+[
+  {
+    "userID": "user-12345",
+    "email": "user1@example.com",
+    "subscriptions": [
+      {
+        "plan": "monthly",
+        "startDate": "2024-12-01T10:00:00Z",
+        "endDate": "2025-01-01T10:00:00Z",
+        "isPaid": true,
+        "transactionId": "txn_12345"
+      }
+    ],
+    "createdAt": "2024-12-19T10:00:00Z",
+    "updatedAt": "2024-12-19T10:00:00Z"
+  },
+  {
+    "userID": "user-67890",
+    "email": "user2@example.com",
+    "subscriptions": [
+      {
+        "plan": "annual",
+        "startDate": "2024-01-01T11:00:00Z",
+        "endDate": "2024-12-31T11:00:00Z",
+        "isPaid": false,
+        "transactionId": "txn_67890"
+      }
+    ],
+    "createdAt": "2024-01-15T11:00:00Z",
+    "updatedAt": "2024-01-15T11:00:00Z"
+  },
+  {
+    "userID": "user-54321",
+    "email": "user3@example.com",
+    "subscriptions": [
+      {
+        "plan": "day pass",
+        "startDate": "2024-12-19T10:00:00Z",
+        "endDate": "2024-12-20T10:00:00Z",
+        "isPaid": true,
+        "transactionId": "txn_54321"
+      }
+    ],
+    "createdAt": "2024-12-19T09:30:00Z",
+    "updatedAt": "2024-12-19T09:30:00Z"
+  }
+]
