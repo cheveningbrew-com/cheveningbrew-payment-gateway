@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const paymentRoutes = require('./routes/payment');
-const userRoutes = require('./routes/user');
+const subscriptionRoutes = require('./routes/subscription');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -32,7 +32,7 @@ app.use(
 );
 
 app.use('/payment', paymentRoutes);
-app.use('/user', userRoutes);
+app.use('/subscription', subscriptionRoutes);
 
 const PORT = process.env.PORT || 4001;
 app.listen(PORT, () => {
