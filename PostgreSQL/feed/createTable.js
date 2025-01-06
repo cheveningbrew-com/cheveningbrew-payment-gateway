@@ -7,7 +7,7 @@ dotenv.config();
 const mainClient = new Client({
   user: process.env.PSQL_USER,
   host: process.env.PSQL_HOST,
-  database: 'postgres', // Connect to the default 'postgres' database first
+  database: process.env.D_PSQL_DATABASE,
   password: process.env.PSQL_PASSWORD,
   port: process.env.PSQL_PORT,
 });
@@ -65,8 +65,9 @@ mainClient
         startDate TIMESTAMP NOT NULL,
         endDate TIMESTAMP NOT NULL,
         isPaid BOOLEAN NOT NULL,
-        transactionId VARCHAR(50) UNIQUE
-        user_type VARCHAR(50)
+        transactionId VARCHAR(50) UNIQUE,
+        userType VARCHAR(50) NOT NULL DEFAULT 'Basic',
+        identityMangedBy VARCHAR(50) NOT NULL
       );
     `;
     console.log('Creating tables...');

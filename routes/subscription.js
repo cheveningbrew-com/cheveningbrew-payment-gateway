@@ -99,19 +99,19 @@ router.get('/:email', async (req, res) => {
 // Update an existing subscription (mark as paid, etc.)
 router.put('/:email', async (req, res) => {
   const { email } = req.params;
-  const { isPaid, transactionId } = req.body;
+  const { isPaid, transactionId, userType } = req.body;
 
 
-  if (isPaid === undefined || transactionId !== null) {
-    return res.status(400).json({ error: 'isPaid and transactionId are required' });
+  if (isPaid === undefined || transactionId !== null || userType === null) {
+    return res.status(400).json({ error: 'isPaid, transactionId and userType are required' });
   }
 
   try {
     const result = await client.query(
       `UPDATE user_subscriptions 
-       SET isPaid = $1, transactionId = $2, updatedAt = NOW() 
-       WHERE email = $3 RETURNING *`,
-      [isPaid, transactionId, email]
+       SET isPaid = $1, transactionId = $2, userType = $3, updatedAt = NOW() 
+       WHERE email = $4 RETURNING *`,
+      [isPaid, transactionId, userType, email]
     );
 
     if (result.rows.length === 0) {
