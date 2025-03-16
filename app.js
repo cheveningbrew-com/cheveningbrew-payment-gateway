@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const paymentRoutes = require('./routes/payment');
-const subscriptionRoutes = require('./routes/subscription');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -12,10 +11,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.use(cors());
 const allowedOrigins = [
   'https://www.ui.paralegal.lk',
-  'https://localhost:3000',
+  'http://localhost:3001',
   'https://www.dev.paralegal.lk',
   'https://www.paralegal.lk',
 ];
@@ -32,7 +30,6 @@ app.use(
 );
 
 app.use('/payment', paymentRoutes);
-app.use('/subscription', subscriptionRoutes);
 
 const PORT = process.env.PORT || 4001;
 app.listen(PORT, () => {
