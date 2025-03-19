@@ -12,10 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const allowedOrigins = [
-  'https://www.ui.paralegal.lk',
+  'https://www.livekit.cheveningbrew.com',
+  'https://www.cheveningbrew.com',
   'http://localhost:3001',
-  'https://www.dev.paralegal.lk',
-  'https://www.paralegal.lk',
 ];
 app.use(
   cors({
