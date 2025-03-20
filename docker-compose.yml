@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  payment_hash_server:
+    build: .
+    image: cheveningbrew/payment-hash-server:0.0
+    container_name: payment-hash-server
+    ports:
+      - "4001:4001"  # Map port 4001 on the host to port 4001 in the container
+    environment:
+      - MERCHANT_ID=${MERCHANT_ID}
+      - MERCHANT_SECRET=${MERCHANT_SECRET}
+    restart: always

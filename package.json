@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "payment-hash-restart": "docker-compose restart",
+    "payment-hash-build": "docker-compose build",
+    "payment-hash-start": "docker-compose up -d --remove-orphans",
+    "payment-hash-stop": "docker-compose down",
+    "payment-hash-logs": "docker-compose logs -f",
+    "payment-hash-clean": "docker-compose down --rmi local"
   },
   "keywords": [],
   "author": "",
