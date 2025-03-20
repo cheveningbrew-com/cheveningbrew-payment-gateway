@@ -1,5 +1,5 @@
 {
-  "name": "payment-gateway",
+  "name": "payment-hash-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
